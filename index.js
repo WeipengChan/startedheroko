@@ -3,7 +3,7 @@ var app = express();
 var   wechat = require('node-wechat')('mytoken');
 
 
-app.set('port', (process.env.PORT || 80));
+app.set('port', (process.env.PORT || 20080));
 
 app.use(express.static(__dirname + '/public'));
 
@@ -13,13 +13,16 @@ app.set('view engine', 'ejs');
 
 app.get('/', function(req, res) {
 
+  res.render('pages/index');
+});
+
+app.get('/wechat', function(req, res) {
+
    //检验 token
   wechat.checkSignature(req, res);
   //预处理
   wechat.handler(req, res);
 
-
-  response.render('pages/index');
 });
 
 app.listen(app.get('port'), function() {
