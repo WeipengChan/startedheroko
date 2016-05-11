@@ -28,6 +28,7 @@ app.use('/wechat', wechat(config, function (req, res, next) {
   if (message.MsgType === 'event') 
   {
      res.reply('欢迎您关注陈小鹏的公众号');
+     return;
   };
 
   if (message.FromUserName === 'diaosi') {
