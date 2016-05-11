@@ -127,4 +127,4 @@ http.createServer(function (req, res) {
     wechat.send(msg);
   });
 
-}).listen(20080);
+}).listen(80);
