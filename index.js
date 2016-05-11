@@ -3,7 +3,7 @@ var app = express();
 var   wechat = require('node-wechat')('mytoken');
 
 
-app.set('port', (process.env.PORT || 20080));
+app.set('port', (process.env.PORT || 80));
 
 app.use(express.static(__dirname + '/public'));
 
